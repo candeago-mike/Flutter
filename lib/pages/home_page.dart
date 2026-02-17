@@ -1,62 +1,55 @@
 import 'package:flutter/material.dart';
-import 'dart:convert';
-import 'package:http/http.dart' as http;
+import 'player_page.dart';
 
-class HomePage extends StatefulWidget {
+class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  // Liste qui va contenir les musiques venant de l'API
-  List musiques = [];
-
-  // Fonction qui appelle l'API iTunes
-  Future<void> fetchMusiques() async {
-    final response = await http.get(
-      Uri.parse(
-        'https://corsproxy.io/?https://itunes.apple.com/search?term=Wallace+Cleaver&entity=song&limit=20',
-      ),
-    );
-
-    if (response.statusCode == 200) {
-      final data = json.decode(response.body);
-
-      setState(() {
-        musiques = data["results"];
-      });
-    }
-  }
-
-  // Appelé une seule fois quand la page démarre
-  @override
-  void initState() {
-    super.initState();
-    fetchMusiques();
-  }
+  final List<Map<String, String>> musiques = const [
+    {
+      "titre": "Blinding Lights",
+      "artiste": "The Weeknd",
+      "image":
+          "https://png.pngtree.com/thumb_back/fh260/background/20240522/pngtree-abstract-cloudy-background-beautiful-natural-streaks-of-sky-and-clouds-red-image_15684333.jpg",
+    },
+    {
+      "titre": "One More Time",
+      "artiste": "Daft Punk",
+      "image":
+          "https://png.pngtree.com/thumb_back/fh260/background/20240522/pngtree-abstract-cloudy-background-beautiful-natural-streaks-of-sky-and-clouds-red-image_15684333.jpg",
+    },
+    {
+      "titre": "Lose Yourself",
+      "artiste": "Eminem",
+      "image":
+          "https://png.pngtree.com/thumb_back/fh260/background/20240522/pngtree-abstract-cloudy-background-beautiful-natural-streaks-of-sky-and-clouds-red-image_15684333.jpg",
+    },
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Music App")),
+      body: ListView.builder(
+        itemCount: musiques.length,
+        itemBuilder: (context, index) {
+          final musique = musiques[index];
 
-      body: musiques.isEmpty
-          ? const Center(child: CircularProgressIndicator())
-          : ListView.builder(
-              itemCount: musiques.length,
-              itemBuilder: (context, index) {
-                final musique = musiques[index];
-
-                return ListTile(
-                  leading: Image.network(musique["artworkUrl100"]),
-                  title: Text(musique["trackName"] ?? "Sans titre"),
-                  subtitle: Text(musique["artistName"] ?? "Artiste inconnu"),
-                  trailing: const Icon(Icons.play_arrow),
-                );
-              },
-            ),
+          return ListTile(
+            leading: Image.network(musique["image"]!),
+            title: Text(musique["titre"]!),
+            subtitle: Text(musique["artiste"]!),
+            trailing: const Icon(Icons.play_arrow),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => PlayerPage(musique: musique),
+                ),
+              );
+            },
+          );
+        },
+      ),
     );
   }
 }
