@@ -6,19 +6,19 @@ class HomePage extends StatelessWidget {
 
   final List<Map<String, String>> musiques = const [
     {
-      "titre": "Blinding Lights",
+      "titre": "Lou",
       "artiste": "The Weeknd",
       "image":
           "https://png.pngtree.com/thumb_back/fh260/background/20240522/pngtree-abstract-cloudy-background-beautiful-natural-streaks-of-sky-and-clouds-red-image_15684333.jpg",
     },
     {
-      "titre": "One More Time",
+      "titre": "La",
       "artiste": "Daft Punk",
       "image":
           "https://png.pngtree.com/thumb_back/fh260/background/20240522/pngtree-abstract-cloudy-background-beautiful-natural-streaks-of-sky-and-clouds-red-image_15684333.jpg",
     },
     {
-      "titre": "Lose Yourself",
+      "titre": "Nullosse",
       "artiste": "Eminem",
       "image":
           "https://png.pngtree.com/thumb_back/fh260/background/20240522/pngtree-abstract-cloudy-background-beautiful-natural-streaks-of-sky-and-clouds-red-image_15684333.jpg",
