@@ -1,27 +1,40 @@
 import 'package:flutter/material.dart';
 import 'player_page.dart';
+import 'player_pagetest.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   final List<Map<String, String>> musiques = const [
     {
-      "titre": "Lou",
-      "artiste": "The Weeknd",
+      "titre": "Andalouse",
+      "artiste": "Kendji Girac",
       "image":
-          "https://png.pngtree.com/thumb_back/fh260/background/20240522/pngtree-abstract-cloudy-background-beautiful-natural-streaks-of-sky-and-clouds-red-image_15684333.jpg",
+          "https://i.scdn.co/image/ab67616d0000b2730b113a7be9d3fe392c238558",
     },
     {
-      "titre": "La",
-      "artiste": "Daft Punk",
+      "titre": "Magic in the air",
+      "artiste": "Magic System",
       "image":
-          "https://png.pngtree.com/thumb_back/fh260/background/20240522/pngtree-abstract-cloudy-background-beautiful-natural-streaks-of-sky-and-clouds-red-image_15684333.jpg",
+          "https://m.media-amazon.com/images/I/71BxXSyM6GL._UF894,1000_QL80_.jpg",
     },
     {
-      "titre": "Nullosse",
-      "artiste": "Eminem",
+      "titre": "Dernière danse",
+      "artiste": "Indila",
       "image":
-          "https://png.pngtree.com/thumb_back/fh260/background/20240522/pngtree-abstract-cloudy-background-beautiful-natural-streaks-of-sky-and-clouds-red-image_15684333.jpg",
+          "https://cdn-images.dzcdn.net/images/cover/6efb3506ac68e18e23d8f62d8b38ebfb/1900x1900-000000-80-0-0.jpg",
+    },
+    {
+      "titre": "Chandelier",
+      "artiste": "Sia",
+      "image":
+          "https://i.scdn.co/image/ab67616d0000b273b55ed804149fffbb5e35ff34",
+    },
+    {
+      "titre": "J’aimerais trop",
+      "artiste": "Keen’v",
+      "image":
+          "https://cdn-images.dzcdn.net/images/cover/236ebac9bde67d4b482b5f17a3f06666/1900x1900-000000-80-0-0.jpg",
     },
   ];
 

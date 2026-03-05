@@ -20,7 +20,10 @@ class _PlayerPageState extends State<PlayerPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.network(widget.musique["image"]!),
+            Image.network(
+              widget.musique["image"]!,
+              height: 500, // 👈 taille fixe
+            ),
             const SizedBox(height: 20),
             Text(
               widget.musique["titre"]!,
@@ -45,4 +48,4 @@ class _PlayerPageState extends State<PlayerPage> {
       ),
     );
   }
-}
+} 
